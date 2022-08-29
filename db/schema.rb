@@ -10,9 +10,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_29_134929) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_29_145927) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "animals", force: :cascade do |t|
+    t.string "category"
+    t.string "gender"
+    t.date "birthday"
+    t.string "name"
+    t.text "animal_bio"
+    t.bigint "shelter_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["shelter_id"], name: "index_animals_on_shelter_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.bigint "request_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["request_id"], name: "index_messages_on_request_id"
+  end
+
+  create_table "requests", force: :cascade do |t|
+    t.date "date"
+    t.string "status"
+    t.bigint "user_id", null: false
+    t.bigint "animal_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["animal_id"], name: "index_requests_on_animal_id"
+    t.index ["user_id"], name: "index_requests_on_user_id"
+  end
+
+  create_table "shelters", force: :cascade do |t|
+    t.string "name"
+    t.string "location"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -26,4 +63,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_29_134929) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "animals", "shelters"
+  add_foreign_key "messages", "requests"
+  add_foreign_key "requests", "animals"
+  add_foreign_key "requests", "users"
 end

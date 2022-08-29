@@ -3,4 +3,11 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def find_animals
+
+  end
+
+  def dashboard
+  end
 end
