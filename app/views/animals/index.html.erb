@@ -1,2 +1,14 @@
-<h1>Animals#index</h1>
-<p>Find me in app/views/animals/index.html.erb</p>
+<div>
+<div>
+    <% @animals.each do |animal|%>
+
+        <div>
+          <div>
+            <h3><%= link_to "#{animal.category}", animal_path(animal) %></h3>
+            <p>price: <%= animal.gender %></p>
+            <p>size: <%= animal.size %></p>
+          </div>
+        </div>
+      </div>
+    <%end%>
+</div>
