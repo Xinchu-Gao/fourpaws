@@ -1,0 +1,46 @@
+
+<div class= "container">
+  <div class="d-flex justify-content-center">
+    <%= form_with url: animals_path, method: :get, class: "find-animals-form" do %>
+      <div>
+        <%= label_tag 'Which animal do you prefer' %>
+        <%= select_tag :category, options_for_select(["cat", "dog"]) %>
+      </div>
+      <div>
+        <%= label_tag 'Which gender should your animal have' %>
+        <%= select_tag :gender, options_for_select(["boy", "girl"]) %>
+      </div>
+      <div>
+        <%= label_tag 'Fun Question' %>
+        <%= text_field_tag :size,
+          params[:size],
+          class: "form-control",
+          placeholder: "Put your answer here"
+        %>
+      </div>
+      <div>
+        <%= label_tag 'Fun Question' %> <br>
+        <%= text_field_tag :size,
+          params[:size],
+          class: "form-control",
+          placeholder: "Put your answer here"
+        %>
+      </div>
+      <div>
+        <%= label_tag 'Which three traits best define you?' %>
+        <%= select_tag :gender, options_for_select(["Reliable, down-to-earth and honest", "Spontaneous, upbeat and fun-loving", "straightforward, sporty and close to nature"]) %>
+      </div>
+       <div>
+        <%= label_tag 'Which movie do you like to watch?' %>
+        <%= select_tag :gender, options_for_select(["Madagascar", "American Pie", "Brokeback Mountain", "Into the wild", "The Fabulous Destiny of Amélie Poulain", "Kill Bill"]) %>
+      </div>
+      <div>
+        <%= label_tag 'Your favourite animal is...' %>
+        <%= select_tag :gender, options_for_select(["funny", "large and powerful", "lively", "tiny and convenient", "smart", "curious", "cuddly", "relaxed"]) %>
+      </div>
+      <div>
+        <%= submit_tag "Submit", name: nil %>
+      </div>
+    <% end %>
+  </div>
+</div>
