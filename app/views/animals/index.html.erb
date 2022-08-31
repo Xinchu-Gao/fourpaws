@@ -1,18 +1,22 @@
-<div>
-<div>
+<div class ="container pt-3" >
+<div class="cards">
     <% @animals.each do |animal|%>
-        <div>
-          <div>
-            <h3><%= link_to "#{animal.category}", animal_path(animal) %></h3>
-            <p>Score: <%= animal.score(params) %></p>
-            <p>Name: <%= animal.name %></p>
-            <p>Gender: <%= animal.gender %></p>
-            <p>Size: <%= animal.size %></p>
-            <p>Gender: <%= animal.gender %></p>
-            <p>Size: <%= animal.size %></p>
-            <p>Remote: <%= animal.remote%></p>
+      <div class="cardos">
+      <% if animal.photo.attached? %>
+       <%= cl_image_tag animal.photo.key, height: 300, width: 200, crop: :fill %>
+       <% else %>
+       <%= image_tag "not_found.png", height: 300, width: 200, crop: :fill%>
+       <% end %>
+        <div class="card-content">
+          <div class="card-text">
+            <h3 class="choose-button"><%= link_to "#{animal.category}".capitalize, animal_path(animal), class: "no-decoration" %></h3>
+            <p class="price">Name: <%= animal.name %></p>
+            <p class="price">Gender: <%= animal.gender %></p>
+             <p class="price">Size: <%= animal.size %></p>
+            <p class="price">Age: <%= animal.age %></p>
           </div>
         </div>
+        <--<p><%= link_to "Book Now", animal_path(animal), class: "basic-link" %></p>
       </div>
     <%end%>
 </div>

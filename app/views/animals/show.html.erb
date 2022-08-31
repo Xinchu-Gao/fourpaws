@@ -1,2 +1,58 @@
-<h1>Animals#show</h1>
-<p>Find me in app/views/animals/show.html.erb</p>
+<html>
+<body>
+  <main>
+    <div class="card">
+      <div class="card__title">
+        <div class="icon">
+        <%= link_to animals_path do %>
+         <i class="fa fa-arrow-left"></i>
+         <% end %>
+        </div>
+        <h3><%= "#{@animal.category}".capitalize%></h3>
+      <div class="card__body">
+        <div class="half">
+          <div class="featured_text">
+            <h1><%= @animal.name %></h1>
+
+            <p class="price"><%= @animal.size %> - <%= @animal.gender %></p>
+          </div>
+          <div class="image">
+            <% if @animal.photo.attached? %>
+    <%= cl_image_tag @animal.photo.key, height: 300, width: 200, crop: :fill %>
+    <% else %>
+    <%= image_tag "not_found.png", height: 300, width: 200, crop: :fill%>
+    <% end %>
+
+          </div>
+        </div>
+        <div class="half">
+          <div class="description">
+            <p><%=@animal.animal_bio%></p>
+          </div>
+          <span class="stock"><i class="fa fa-pen"></i> In stock</span>
+          <div class="reviews">
+            <ul class="stars">
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star-o"></i></li>
+            </ul>
+            <span>(User has 64 reviews)</span>
+          </div>
+        </div>
+      </div>
+      <div class="card__footer">
+        <div class="recommend">
+          <p>Sold by</p>
+          <h3>Andrew Palmer</h3>
+        </div>
+        <div class="action">
+            <button type="button">Add to cart</button>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
