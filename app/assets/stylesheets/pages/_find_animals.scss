@@ -1,0 +1,20 @@
+// .container {
+//   display: flex;
+//   // flex-direction: row | row-reverse | column | column-reverse;
+//   flex-wrap: wrap;
+//   order: 1;
+//   align-items: center;
+//   justify-content: centre
+// }
+
+// .container {
+//   display: flex;
+//   justify-content: center;
+//   flex-direction: column;
+// }
+
+form.find-animals-form {
+  display: flex;
+  width: 400px;
+  flex-direction: column;
+}
