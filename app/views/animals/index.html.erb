@@ -1,13 +1,16 @@
 <div>
 <div>
     <% @animals.each do |animal|%>
-
         <div>
           <div>
             <h3><%= link_to "#{animal.category}", animal_path(animal) %></h3>
-            <p>price: <%= animal.gender %></p>
-            <p>size: <%= animal.size %></p>
-            <p>score: <%= animal.score(params) %></p>
+            <p>Score: <%= animal.score(params) %></p>
+            <p>Name: <%= animal.name %></p>
+            <p>Gender: <%= animal.gender %></p>
+            <p>Size: <%= animal.size %></p>
+            <p>Gender: <%= animal.gender %></p>
+            <p>Size: <%= animal.size %></p>
+            <p>Remote: <%= animal.remote%></p>
           </div>
         </div>
       </div>
