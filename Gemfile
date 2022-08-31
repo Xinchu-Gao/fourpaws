@@ -76,4 +76,7 @@ group :test do
   gem "webdrivers"
 end
 
-
+# dotenv gem for security: needed for cloudinary
+gem "dotenv-rails", groups: [:development, :test]
+#actual cloudinary
+gem "cloudinary"
