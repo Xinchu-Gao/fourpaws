@@ -7,6 +7,7 @@
             <h3><%= link_to "#{animal.category}", animal_path(animal) %></h3>
             <p>price: <%= animal.gender %></p>
             <p>size: <%= animal.size %></p>
+            <p>score: <%= animal.score(params) %></p>
           </div>
         </div>
       </div>

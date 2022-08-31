@@ -2,9 +2,22 @@ class AnimalsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
   skip_before_action :authenticate_user!, only: :show
 
+  #Go trough all animals seeds and compare the category field,and..
+  #drop elements that do not match user choice.
+  # the every remaining Animal element get score +20
   def index
-    @animals = Animal.all
+
+    if params[:category].present?
+      @animals = Animal.where(category: params[:category])
+      @animals = @animals.sort_by do |animal|
+        # negative score since we want to sort by highest score
+        -animal.score(params)
+      end
+    else
+      @animals = Animal.all
+    end
   end
+
 
   def show
     @animal = Animal.find(params[:id])
