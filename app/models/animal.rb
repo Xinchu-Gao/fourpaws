@@ -4,21 +4,21 @@ class Animal < ApplicationRecord
   has_one_attached :photo
 
 def score(params)
-score =0
+score =20
     if params [:gender].present? && self.gender == params[:gender]
-      score +=10
+      score +=20
     end
 
     if params [:age].present? && self.age == params[:age]
-      score +=10
+      score +=20
     end
 
     if params [:size].present? && self.size == params[:size]
-      score +=10
+      score +=20
     end
 
     if params [:remote].present? && self.remote == params[:remote]
-      score +=10
+      score +=20
     end
     score
   end

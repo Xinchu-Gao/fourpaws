@@ -8,6 +8,7 @@ class AnimalsController < ApplicationController
   def index
 
     if params[:category].present?
+
       @animals = Animal.where(category: params[:category])
       @animals = @animals.sort_by do |animal|
         # negative score since we want to sort by highest score
