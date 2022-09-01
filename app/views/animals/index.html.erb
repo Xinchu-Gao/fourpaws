@@ -9,15 +9,14 @@
        <% end %>
         <div class="card-content">
           <div class="card-text">
-            <h3 class="choose-button"><%= link_to "#{animal.category}".capitalize, animal_path(animal), class: "no-decoration" %></h3>
-            <p class="price">Name: <%= animal.name %></p>
+            <h3 class="choose-button"><%= link_to "#{animal.name}".capitalize, animal_path(animal), class: "no-decoration" %></h3>
             <p class="price">Gender: <%= animal.gender %></p>
              <p class="price">Size: <%= animal.size %></p>
             <p class="price">Age: <%= animal.age %></p>
             <p class="price">Score: <%= animal.score(params) %></p>
           </div>
         </div>
-        <--<p><%= link_to "Book Now", animal_path(animal), class: "basic-link" %></p>
+        <p><%= link_to "Know more about him/her", animal_path(animal), class: "basic-link" %></p>
       </div>
     <%end%>
     <% if params[:category].present? %>

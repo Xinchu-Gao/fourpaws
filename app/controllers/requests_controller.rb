@@ -28,7 +28,6 @@ class RequestsController < ApplicationController
 
   def new
     # We need @request in our `simple_form_for`
-    @request = Request.find(params[:dress_id])
     @request = Request.new
   end
 
