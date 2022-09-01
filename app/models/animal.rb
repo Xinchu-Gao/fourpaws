@@ -3,23 +3,22 @@ class Animal < ApplicationRecord
   has_many :requests
   has_one_attached :photo
 
-def score(params)
-score =20
-    if params [:gender].present? && self.gender == params[:gender]
-      score +=20
+  def score(user_input)
+    score = 20
+
+    if user_input[:gender].present? && self.gender == user_input[:gender]
+      score += 20
+    end
+    if user_input[:age].present? && self.age == user_input[:age]
+      score += 20
+    end
+    if user_input[:size].present? && self.size == user_input[:size]
+      score += 20
+    end
+    if user_input[:remote].present? && self.remote == true
+      score += 20
     end
 
-    if params [:age].present? && self.age == params[:age]
-      score +=20
-    end
-
-    if params [:size].present? && self.size == params[:size]
-      score +=20
-    end
-
-    if params [:remote].present? && self.remote == params[:remote]
-      score +=20
-    end
     score
   end
 end

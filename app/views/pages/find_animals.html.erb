@@ -3,43 +3,50 @@
   <div class="d-flex justify-content-center">
     <%= form_with url: animals_path, method: :get, class: "find-animals-form" do %>
       <div>
-        <%= label_tag 'Which animal do you prefer' %>
+        <%= label_tag 'Which pet do you prefer' %>
         <%= select_tag :category, options_for_select(["cat", "dog"]) %>
       </div>
       <div>
-        <%= label_tag 'Which gender should your animal have' %>
+        <%= label_tag 'Would it be a boy or girl?' %>
         <%= select_tag :gender, options_for_select(["boy", "girl"]) %>
       </div>
       <div>
-        <%= label_tag 'Fun Question' %>
-        <%= text_field_tag :size,
-          params[:size],
-          class: "form-control",
-          placeholder: "Put your answer here"
-        %>
+        <%= label_tag 'How big is your home?' %>
+        <%= select_tag :size, options_for_select(["S", "M", "L","XL"]) %>
       </div>
+
+      <div>
+        <%= label_tag 'How active are you?' %>
+        <%= select_tag :age, options_for_select(["Teenager", "Adult", "Elder"]) %>
+      </div>
+
+      <div>
+        <%= label_tag 'Do you want to do it in remote?' %>
+        <%= select_tag :remote, options_for_select(["Yes", "No"]) %>
+      </div>
+
       <div>
         <%= label_tag 'Fun Question' %> <br>
-        <%= text_field_tag :size,
-          params[:size],
+        <%= text_field_tag :name,
+          params[:name],
           class: "form-control",
           placeholder: "Put your answer here"
         %>
       </div>
       <div>
         <%= label_tag 'Which three traits best define you?' %>
-        <%= select_tag :gender, options_for_select(["Reliable, down-to-earth and honest", "Spontaneous, upbeat and fun-loving", "straightforward, sporty and close to nature"]) %>
+        <%= select_tag :animal_bio, options_for_select(["Reliable, down-to-earth and honest", "Spontaneous, upbeat and fun-loving", "straightforward, sporty and close to nature"]) %>
       </div>
        <div>
         <%= label_tag 'Which movie do you like to watch?' %>
-        <%= select_tag :gender, options_for_select(["Madagascar", "American Pie", "Brokeback Mountain", "Into the wild", "The Fabulous Destiny of Amélie Poulain", "Kill Bill"]) %>
+        <%= select_tag :animal_bio, options_for_select(["Madagascar", "American Pie", "Brokeback Mountain", "Into the wild", "The Fabulous Destiny of Amélie Poulain", "Kill Bill"]) %>
       </div>
       <div>
         <%= label_tag 'Your favourite animal is...' %>
-        <%= select_tag :gender, options_for_select(["funny", "large and powerful", "lively", "tiny and convenient", "smart", "curious", "cuddly", "relaxed"]) %>
+        <%= select_tag :animal_bio, options_for_select(["funny", "large and powerful", "lively", "tiny and convenient", "smart", "curious", "cuddly", "relaxed"]) %>
       </div>
       <div>
-        <%= submit_tag "Submit", name: nil %>
+        <%= submit_tag "Submit" %>
       </div>
     <% end %>
   </div>

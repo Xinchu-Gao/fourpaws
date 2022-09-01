@@ -6,10 +6,8 @@ class AnimalsController < ApplicationController
   #drop elements that do not match user choice.
   # the every remaining Animal element get score +20
   def index
-
     if params[:category].present?
-
-      @animals = Animal.where(category: params[:category])
+      @animals = Animal.where(category: params[:category]).limit(7)
       @animals = @animals.sort_by do |animal|
         # negative score since we want to sort by highest score
         -animal.score(params)
@@ -58,4 +56,6 @@ class AnimalsController < ApplicationController
   def animal_params
     params.require(:animal).permit(:category, :gender, :name, :animal_bio, :age,:size, remote:)
   end
+
+
 end
