@@ -8,47 +8,31 @@
          <i class="fa fa-arrow-left"></i>
          <% end %>
         </div>
-        <h3><%= "#{@animal.category}".capitalize%></h3>
-      <div class="card__body">
-        <div class="half">
-          <div class="featured_text">
-            <h1><%= @animal.name %></h1>
-
-            <p class="price"><%= @animal.size %> - <%= @animal.gender %></p>
+        <h3><%= "#{@animal.name}".capitalize%></h3>
+        <div class="card__body">
+          <div class="half">
+            <div class="featured_text">
+            <p class="age">Age Group: <%= @animal.age %></p>
+            <p class="size">My height is <%= @animal.size %></p>
           </div>
           <div class="image">
             <% if @animal.photo.attached? %>
-    <%= cl_image_tag @animal.photo.key, height: 300, width: 200, crop: :fill %>
-    <% else %>
-    <%= image_tag "not_found.png", height: 300, width: 200, crop: :fill%>
-    <% end %>
+               <%= cl_image_tag @animal.photo.key, height: 300, width: 200, crop: :fill %>
+               <% else %>
+                  <%= image_tag "not_found.png", height: 300, width: 200, crop: :fill%>
+            <% end %>
 
           </div>
         </div>
         <div class="half">
           <div class="description">
-            <p><%=@animal.animal_bio%></p>
-          </div>
-          <span class="stock"><i class="fa fa-pen"></i> In stock</span>
-          <div class="reviews">
-            <ul class="stars">
-              <li><i class="fa fa-star"></i></li>
-              <li><i class="fa fa-star"></i></li>
-              <li><i class="fa fa-star"></i></li>
-              <li><i class="fa fa-star"></i></li>
-              <li><i class="fa fa-star-o"></i></li>
-            </ul>
-            <span>(User has 64 reviews)</span>
+            <p><strong>About me: </strong><%=@animal.animal_bio%></p>
           </div>
         </div>
       </div>
       <div class="card__footer">
-        <div class="recommend">
-          <p>Sold by</p>
-          <h3>Andrew Palmer</h3>
-        </div>
         <div class="action">
-            <button type="button">Add to cart</button>
+          <%= link_to "Adopt him/her", new_animal_request_path(@animal), class: "basic-link" %>
         </div>
       </div>
     </div>
