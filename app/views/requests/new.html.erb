@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <h3>Example of a Select Box</h3>
-    <form>
+
+    <%= simple_form_for [@animal, @request] do |f| %>
+      <%= f.input :date %>
+    <form action=<%= dashboard_path %>>
       Your name:<br>
-      <input type="text" name="name" placeholder = "Firstname lastname"><br>
+      <input type="text" name="name" placeholder = "Firstname Lastname"><br>
       Your Email:<br>
       <input type="text" name="email" placeholder= "gao@web.com"><br>
       Address:<br>
       <input type="text" name="address" ><br>
       Phone number:<br>
       <input type="text" name="phone_number" ><br>
+      Start date:<br>
+      <input type="date" name="start_date" ><br>
 
       <label for="city">Where are you living?</label>
         <select name="city" id="city">
@@ -24,16 +28,16 @@
  <!-- Question 2 -->
       <h2>How long do you plan to support this pet?</h2>
       <!-- Here are the choices for the second question. Notice how each input tag has the same name (q2), but a different name than the previous question. -->
-      <label><input type="radio" name="q2" value="c1">
+      <label><input type="radio" name="q1" value="c1">
         1 month
       </label><br />
-      <label><input type="radio" name="q2" value="c2">
+      <label><input type="radio" name="q1" value="c2">
         3 months
       </label><br />
-      <label><input type="radio" name="q2" value="c3">
+      <label><input type="radio" name="q1" value="c3">
         6 months
       </label><br />
-      <label><input type="radio" name="q2" value="c4">
+      <label><input type="radio" name="q1" value="c4">
         1 year
       </label><br />
 
@@ -77,8 +81,17 @@
           <textarea rows="5" cols="50" name="Description"
                               id="Description" placeholder = "Tell us about you"></textarea>
 
-     <p><%= link_to "Save and Send",dashboard_path, class: "basic-link" %></p>
-     <p><%= link_to "Go back to my matches",animals_path, class: "basic-link" %></p>
+      <p><%= link_to "Go back to my matches",animals_path, class: "btn btn-flat" %></p>
+      <input type="submit" value="Confirm" class="btn btn-flat">
+       <%= f.submit %>
+    <% end %>
+
     </form>
+
+
+
+
+
+    <p><%#= link_to "Confirm", dashboard_path, :class => "btn btn-flat"%></p>
   </body>
 </html>

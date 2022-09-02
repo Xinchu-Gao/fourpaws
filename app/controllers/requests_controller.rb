@@ -1,5 +1,5 @@
 class RequestsController < ApplicationController
-  before_action :set_animal, only: [:create, :edit, :destroy, :update]
+  before_action :set_animal, only: [:create, :edit, :destroy, :update, :new]
 
   def index
     @requests = Request.all
@@ -19,11 +19,16 @@ class RequestsController < ApplicationController
   end
 
   def create
+    puts "new request"
     @request = Request.new(request_params)
-    @request.dress = @request
+    @request.status = "pending"
+    @request.animal = @animal
     @request.user = current_user
-    @request.save
-    redirect_to requests_path
+    if @request.save
+      redirect_to dashboard_path
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def new
@@ -33,10 +38,10 @@ class RequestsController < ApplicationController
 
   private
 
-  def set_dress
-    @request = Request.find(params[:dress_id])
+  def set_animal
+    @animal = Animal.find(params[:animal_id])
   end
   def request_params
-    params.require(:request).permit(:start_date, :end_date)
+    params.require(:request).permit(:date)
   end
 end

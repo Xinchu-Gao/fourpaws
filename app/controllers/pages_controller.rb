@@ -9,5 +9,6 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @requests = current_user.requests
   end
 end
