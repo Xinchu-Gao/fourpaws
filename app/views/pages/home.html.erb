@@ -6,7 +6,8 @@
         <p>There are a thousand different methods to care for a pet; discover yours! Find your perfect <br><strong> match!</strong></p>
       </div>
       <div class="wrap" >
-        <button class="button">Find your match</button>
+
+       <%= link_to "Find your match", find_animals_path, class:"button" %>
       </div>
     </div>
   </div>
@@ -24,7 +25,7 @@
   </div>
 
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url(<%=image_path("cat_mystery.png")%>)">
-    Browse Shelters nearby
+  <%= link_to "Browse Shelters nearby", animals_path, class: "nav-link" %>
   </div>
 </div>
 </div>
