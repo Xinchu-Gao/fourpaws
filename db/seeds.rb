@@ -86,12 +86,6 @@ animal20.save
 
 
 
-request1= Request.new(date: "2022.09.02", status: "Pending", user_id: 3, animal_id: 155)
-request1.save
-request2= Request.new(date: "2022.02.04", status: "Declined",user_id: 3, animal_id: 155)
-request2.save
-
-
 
 
 
