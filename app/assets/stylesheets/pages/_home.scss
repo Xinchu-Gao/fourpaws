@@ -32,10 +32,10 @@
 //**Home buttons CSS**
 
 .btn-ghost {
-  color: #4A4A4A;
-  border: 1px solid #4A4A4A;
+  color: #ff9797;
+  border: 1px solid #ff6363;
   padding: 8px 24px;
-  border-radius: 50px;
+
   font-weight: lighter;
   opacity: 0.6;
   transition: opacity 0.3s ease;
@@ -91,12 +91,12 @@
 .button {
   min-width: 300px;
   min-height: 60px;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 22px;
   text-transform: uppercase;
   letter-spacing: 1.3px;
   font-weight: 700;
-  color: #313133;
+  color: #ffffff;
   background: #d14f8e;
 background: linear-gradient(90deg, rgb(230, 129, 174) 0%, rgb(209, 79, 138) 100%);
   border: none;
@@ -168,9 +168,10 @@ button:hover::after, button:focus::after {
 .card-category {
   background-size: cover;
   background-position: center;
-  height: 180px;
+  height: 300px;
   display: flex;
-  justify-content: center;
+  justify-content: right;
+  padding-right: 30px;
   align-items: center;
   color: white;
   font-size: 24px;
