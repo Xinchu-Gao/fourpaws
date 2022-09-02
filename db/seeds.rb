@@ -7,6 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 Animal.destroy_all
 Shelter.destroy_all
+Request.destroy_all
 
 shelter = Shelter.create(name: "Tierheim Mücnhen", location: "Munich")
 
@@ -82,6 +83,16 @@ animal19.save
 animal20 = Animal.new(shelter_id: shelter.id, category: "cat",name: "Barsik", gender: "boy", age: "Adult", size: "M", remote: true,  animal_bio:"Barsik came to us because he was unbalanced in his home. He makes it clear when something doesn't suit him and is sometimes moody and headstrong. But he also likes to cuddle. What he needs is a cat-experienced home that can read him well.In the beginning Barsik is reserved. He does not want to be crowded and needs outdoor access to let off steam and exercise. Small children should not live in the new home. He also does not like other cats.")
 animal20.photo.attach(io: File.open("#{Rails.root}/app/assets/images/animal20.jpg"),filename: "animal20.jpg", content_type: "image/png")
 animal20.save
+
+
+
+request1= Request.new(date: "2022.09.02", status: "Pending", user_id: 3, animal_id: 155)
+request1.save
+request2= Request.new(date: "2022.02.04", status: "Declined",user_id: 3, animal_id: 155)
+request2.save
+
+
+
 
 
 puts "Cute animals"
