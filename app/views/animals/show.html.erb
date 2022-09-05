@@ -1,42 +1,44 @@
-<html>
-<body>
-  <main>
-    <div class="card">
-      <div class="card__title">
-        <div class="icon">
-        <%= link_to animals_path do %>
-         <i class="fa fa-arrow-left"></i>
-         <% end %>
-        </div>
-        <h3><%= "#{@animal.name}".capitalize%></h3>
-        <div class="card__body">
-          <div class="half">
-            <div class="featured_text">
-            <p class="age">Age Group: <%= @animal.age %></p>
-            <p class="size">My height is <%= @animal.size %></p>
-          </div>
-          <div class="image">
-            <% if @animal.photo.attached? %>
-               <%= cl_image_tag @animal.photo.key, height: 300, width: 200, crop: :fill %>
-               <% else %>
-                  <%= image_tag "not_found.png", height: 300, width: 200, crop: :fill%>
-            <% end %>
+<div class="pet-show">
+  <div class="row justify-content-center">
+    <div class="col-6">
 
+      <div class="pet-card">
+          <div class="pet-banner"><svg viewBox="0 0 100 100">
+
+              </svg></div>
+          <div class="pet-menu">
+              <div class="opener"><span></span><span></span><span></span></div>
           </div>
-        </div>
-        <div class="half">
-          <div class="description">
-            <p><strong>About me: </strong><%=@animal.animal_bio%></p>
+          <h2 class="name"></h2>
+          <div class="title">Ant Collector</div>
+          <div class="actions">
+              <div class="follow-info">
+                  <h2><a href="#"><span>12</span><small>Followers</small></a></h2>
+                  <h2><a href="#"><span>1000</span><small>Following</small></a></h2>
+              </div>
+              <div class="follow-btn"><button>Follow</button></div>
           </div>
-        </div>
-      </div>
-      <div class="card__footer">
-        <div class="action">
-          <%= link_to "Adopt him/her", new_animal_request_path(@animal), class: "basic-link" %>
-        </div>
+          <div class="desc">Morgan has collected ants since they were six years old and now has many dozen ants but none in their pants.</div>
       </div>
     </div>
-  </main>
-</body>
+  `<div class="col-6">
+    <div class="pet-card">
+        <div class="pet-banner"><svg viewBox="0 0 100 100">
 
-</html>
+            </svg></div>
+        <div class="pet-menu">
+            <div class="opener"><span></span><span></span><span></span></div>
+        </div>
+        <h2 class="name">Morgan Sweeney</h2>
+        <div class="title">Ant Collector</div>
+        <div class="actions">
+            <div class="follow-info">
+                <h2><a href="#"><span>12</span><small>Followers</small></a></h2>
+                <h2><a href="#"><span>1000</span><small>Following</small></a></h2>
+            </div>
+            <div class="follow-btn"><button>Follow</button></div>
+        </div>
+        <div class="desc">Morgan has collected ants since they were six years old and now has many dozen ants but none in their pants.</div>
+    </div>
+  </div>`
+</div>

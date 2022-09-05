@@ -1,5 +1,5 @@
-<div class ="container pt-3" >
-<div class="cards">
+<div class ="container" >
+<div class="animal-cards">
     <% @animals.each do |animal|%>
       <div class="cardos">
       <% if animal.photo.attached? %>
@@ -10,13 +10,13 @@
         <div class="card-content">
           <div class="card-text">
             <h3 class="choose-button"><%= link_to "#{animal.name}".capitalize, animal_path(animal), class: "no-decoration" %></h3>
-            <p class="price">Gender: <%= animal.gender %></p>
-             <p class="price">Size: <%= animal.size %></p>
-            <p class="price">Age: <%= animal.age %></p>
-            <p class="price">Score: <%= animal.score(params) %></p>
+
           </div>
         </div>
-        <p><%= link_to "Know more about him/her", animal_path(animal), class: "basic-link" %></p>
+         <p> <i class="<%='fas fa-heart' if params[:category].present?%>"></i>  <%=animal.score(params)  if params[:category].present? %></p>
+        <p><i class="fa-solid fa-hourglass-start"></i>    <%=animal.age%></p>
+        <p><i class="fa-solid fa-compress"></i> <%=animal.size%></p>
+        <p><i class="fa-solid fa-mars-and-venus"></i></i>  <%= animal.gender.capitalize%></p>
       </div>
     <%end%>
     <% if params[:category].present? %>
