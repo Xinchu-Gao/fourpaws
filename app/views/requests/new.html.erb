@@ -2,92 +2,85 @@
 <html>
   <body>
     <h1>Application</h1>
-      <h2>When do you want to start? </h2>
-      <%= simple_form_for [@animal, @request] do |f| %>
-          <%= f.input :date %>
-        <form action=<%= dashboard_path %>>
-          Your name:<br>
-          <input type="text" name="name" placeholder = "Firstname Lastname"><br>
-          Your Email:<br>
-          <input type="text" name="email" placeholder= "gao@web.com"><br>
-          Address:<br>
-          <input type="text" name="address" ><br>
+    <h2>When do you want to start?</h2>
+    <%= simple_form_for [@animal, @request] do |f| %>
+      <%= f.input :date %>
+    <form action=<%= requests_path %>>
+      Your name:<br>
+      <input type="text" name="name" placeholder = "Firstname Lastname"><br>
+      Your Email:<br>
+      <input type="text" name="email" placeholder= "gao@web.com"><br>
 
-          <label for="city">Where are you living?</label>
-            <select name="city" id="city">
-                <option value="Munich">Munich</option>
-                <option value="Nürnburg">Nürnburg</option>
-                <option value="Würzrg">Würzburg</option>
-                <option value="Regensburg">Regensburg</option>
-                <option value="Augsburg">Augsburg</option>
-                <option value="Ingolstadt">Ingolstadt</option>
-            </select>
-  <!-- Question 2 -->
-        <h2>How long do you plan to support this pet?</h2>
-        <!-- Here are the choices for the second question. Notice how each input tag has the same name (q2), but a different name than the previous question. -->
-          <label><input type="radio" name="q1" value="c1">
-            1 month
-          </label><br />
-          <label><input type="radio" name="q1" value="c2">
-            3 months
-          </label><br />
-          <label><input type="radio" name="q1" value="c3">
-            6 months
-          </label><br />
-          <label><input type="radio" name="q1" value="c4">
-            1 year
-          </label><br />
+
+      <label for="city">Where are you living?</label>
+        <select name="city" id="city">
+            <option value="Munich">Munich</option>
+            <option value="Nürnburg">Nürnburg</option>
+            <option value="Würzrg">Würzburg</option>
+            <option value="Regensburg">Regensburg</option>
+            <option value="Augsburg">Augsburg</option>
+            <option value="Ingolstadt">Ingolstadt</option>
+        </select>
+ <!-- Question 2 -->
+      <h2>How long do you plan to support this pet?</h2>
+      <!-- Here are the choices for the second question. Notice how each input tag has the same name (q2), but a different name than the previous question. -->
+      <label><input type="radio" name="q1" value="c1">
+        1 month
+      </label><br />
+      <label><input type="radio" name="q1" value="c2">
+        3 months
+      </label><br />
+      <label><input type="radio" name="q1" value="c3">
+        6 months
+      </label><br />
+      <label><input type="radio" name="q1" value="c4">
+        1 year
+      </label><br />
 
   <!-- Question 3 -->
-        <h2>How much do you plan to support this pet?</h2>
-          <p>🐶Don't forget large dogs can eat a lot </p>
-          <!-- Here are the choices for the second question. Notice how each input tag has the same name (q2), but a different name than the previous question. -->
-          <label><input type="radio" name="q2" value="c1">
-            20 euros per month
-          </label><br />
-          <label><input type="radio" name="q2" value="c2">
-            30 euros per month
-          </label><br />
-          <label><input type="radio" name="q2" value="c3">
-            40 euros per month
-          </label><br />
-          <label><input type="radio" name="q2" value="c4">
-            55 euros per month
-          </label><br />
+      <h2>How much do you plan to support this pet?</h2>
+      <p>🐶Don't forget large dogs can eat a lot </p>
+      <!-- Here are the choices for the second question. Notice how each input tag has the same name (q2), but a different name than the previous question. -->
+      <label><input type="radio" name="q2" value="c1">
+        20 euros per month
+      </label><br />
+      <label><input type="radio" name="q2" value="c2">
+        30 euros per month
+      </label><br />
+      <label><input type="radio" name="q2" value="c3">
+        40 euros per month
+      </label><br />
+      <label><input type="radio" name="q2" value="c4">
+        55 euros per month
+      </label><br />
 
 
       <!-- Question 4-->
-        <h2>Which adopation way do you prefer?</h2>
+      <h2>Which adopation way do you prefer?</h2>
       <!-- Choices for the third question -->
-          <label><input type="radio" name="q3" value="c1">
-            100% remote(only see the pet in videos)
-          </label><br />
-          <label><input type="radio" name="q3" value="c2">
-            50% remote(visit the pet in shelter at the weekend)
-          </label><br />
-          <label><input type="radio" name="q3" value="c3">
-            25% remote(take the pet home at the weekend)
-          </label><br />
-          <label><input type="radio" name="q3" value="c4">
-            0% remote(I want to bring it home)
-          </label><br />
+      <label><input type="radio" name="q3" value="c1">
+        100% remote(only see the pet in videos)
+      </label><br />
+      <label><input type="radio" name="q3" value="c2">
+        50% remote(visit the pet in shelter at the weekend)
+      </label><br />
+      <label><input type="radio" name="q3" value="c3">
+        25% remote(take the pet home at the weekend)
+      </label><br />
+      <label><input type="radio" name="q3" value="c4">
+        0% remote(I want to bring it home)
+      </label><br />
 
       <!-- Question 5-->
-        <h3>Is there anything else we should know?</h3>
-            <label for="Description"></label>
-            <textarea rows="5" cols="50" name="Description"
-                                id="Description" placeholder = "Tell us about you"></textarea>
+      <h3>Is there anything else we should know?</h3>
+          <label for="Description"></label>
 
-        <p><%= link_to "Go back to my matches",animals_path, class: "btn btn-flat" %></p>
-
-<<<<<<< HEAD
-      <input type="submit" value="Confirm" class="btn btn-flat">
-=======
       <p><%= link_to "Go back to my matches",animals_path, class: "btn btn-flat" %></p>
->>>>>>> f65dc1c9ead2691ccde77930efd0b8c6b06a0654
-       <%= f.submit %>
-      <% end %>
+      <input type="submit" value="Confirm" class="btn btn-flat">
+
+    <% end %>
 
     </form>
+
   </body>
 </html>
