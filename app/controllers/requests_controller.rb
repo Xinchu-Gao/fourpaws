@@ -7,6 +7,7 @@ class RequestsController < ApplicationController
 
   def show
     @request = Request.find(params[:id])
+    @message = Message.new
   end
   def edit
     @request = Request.find(params[:id])
@@ -25,7 +26,7 @@ class RequestsController < ApplicationController
     @request.animal = @animal
     @request.user = current_user
     if @request.save
-      redirect_to dashboard_path
+      redirect_to requests_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -34,6 +35,12 @@ class RequestsController < ApplicationController
   def new
     # We need @request in our `simple_form_for`
     @request = Request.new
+  end
+
+  def destroy
+    @request = Request.find(params[:id])
+    @request.destroy
+    redirect_to requests_path, status: :see_other
   end
 
   private

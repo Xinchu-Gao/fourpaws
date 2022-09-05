@@ -9,7 +9,7 @@ Animal.destroy_all
 Shelter.destroy_all
 Request.destroy_all
 
-shelter = Shelter.create(name: "Tierheim Mücnhen", location: "Munich")
+shelter = Shelter.create(name: "Tierheim München", location: "Munich")
 
 animal1 = Animal.new(shelter_id: shelter.id,  category: "cat",name: "Leo", gender: "boy", age: "Teenager", size: "M", remote: true,  animal_bio: "🧏 Leo was given to us at the shelter because his owner could no longer take care of him for health reasons.Since he is deaf, he becomes more shy. He likes staying with Ella who came to us as a found animal.Deaf Leo meows loudly if he has to wait too long for company. Since Leo's sensitive stomach is especially sensitive to stress, his new family (preferably with older, responsible children) should have a relaxed atmosphere. ")
 animal1.photo.attach(io: File.open("#{Rails.root}/app/assets/images/animal1.jpg"),filename: "animal1.jpg", content_type: "image/png")

@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <html>
   <body>
-
+    <h1>Application</h1>
+    <h2>When do you want to start?</h2>
     <%= simple_form_for [@animal, @request] do |f| %>
       <%= f.input :date %>
-    <form action=<%= dashboard_path %>>
+    <form action=<%= requests_path %>>
       Your name:<br>
       <input type="text" name="name" placeholder = "Firstname Lastname"><br>
       Your Email:<br>
       <input type="text" name="email" placeholder= "gao@web.com"><br>
-      Address:<br>
-      <input type="text" name="address" ><br>
-      Phone number:<br>
-      <input type="text" name="phone_number" ><br>
-      Start date:<br>
-      <input type="date" name="start_date" ><br>
+
 
       <label for="city">Where are you living?</label>
         <select name="city" id="city">
@@ -78,19 +74,13 @@
       <!-- Question 5-->
       <h3>Is there anything else we should know?</h3>
           <label for="Description"></label>
-          <textarea rows="5" cols="50" name="Description"
-                              id="Description" placeholder = "Tell us about you"></textarea>
 
       <p><%= link_to "Go back to my matches",animals_path, class: "btn btn-flat" %></p>
-       <%= f.submit %>
+      <input type="submit" value="Confirm" class="btn btn-flat">
+
     <% end %>
 
     </form>
 
-
-
-
-
-    <p><%#= link_to "Confirm", dashboard_path, :class => "btn btn-flat"%></p>
   </body>
 </html>
