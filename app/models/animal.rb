@@ -1,6 +1,6 @@
 class Animal < ApplicationRecord
   belongs_to :shelter
-  has_many :requests
+  has_many :requests, dependent: :destroy
   has_one_attached :photo
 
   def score(user_input)
