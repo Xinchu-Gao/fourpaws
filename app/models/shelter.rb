@@ -1,3 +1,3 @@
 class Shelter < ApplicationRecord
-  has_many :animals
+  has_many :animals, dependent: :destroy
 end
