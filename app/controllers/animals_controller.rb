@@ -6,7 +6,6 @@ class AnimalsController < ApplicationController
   #drop elements that do not match user choice.
   # the every remaining Animal element get score +20
   def index
-
     if params[:category].present?
 
       @animals = Animal.where(category: params[:category])
