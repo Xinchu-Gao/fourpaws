@@ -7,8 +7,9 @@
 #   Character.create(name: "Luke", movie: movies.first)
 Animal.destroy_all
 Shelter.destroy_all
+Request.destroy_all
 
-shelter = Shelter.create(name: "Tierheim Mücnhen", location: "Munich")
+shelter = Shelter.create(name: "Tierheim München", location: "Munich")
 
 animal1 = Animal.new(shelter_id: shelter.id,  category: "cat",name: "Leo", gender: "boy", age: "Teenager", size: "M", remote: true,  animal_bio: "🧏 Leo was given to us at the shelter because his owner could no longer take care of him for health reasons.Since he is deaf, he becomes more shy. He likes staying with Ella who came to us as a found animal.Deaf Leo meows loudly if he has to wait too long for company. Since Leo's sensitive stomach is especially sensitive to stress, his new family (preferably with older, responsible children) should have a relaxed atmosphere. ")
 animal1.photo.attach(io: File.open("#{Rails.root}/app/assets/images/animal1.jpg"),filename: "animal1.jpg", content_type: "image/png")
@@ -82,6 +83,10 @@ animal19.save
 animal20 = Animal.new(shelter_id: shelter.id, category: "cat",name: "Barsik", gender: "boy", age: "Adult", size: "M", remote: true,  animal_bio:"Barsik came to us because he was unbalanced in his home. He makes it clear when something doesn't suit him and is sometimes moody and headstrong. But he also likes to cuddle. What he needs is a cat-experienced home that can read him well.In the beginning Barsik is reserved. He does not want to be crowded and needs outdoor access to let off steam and exercise. Small children should not live in the new home. He also does not like other cats.")
 animal20.photo.attach(io: File.open("#{Rails.root}/app/assets/images/animal20.jpg"),filename: "animal20.jpg", content_type: "image/png")
 animal20.save
+
+
+
+
 
 
 puts "Cute animals"

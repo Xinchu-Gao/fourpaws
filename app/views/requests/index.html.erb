@@ -1,0 +1,13 @@
+<div class="cards">
+  <h2>Requests</h2>
+    <ul><% @requests.each do |request| %>
+      <li>Date: <%= request.date %> <br>
+      Status: <%= request.status %> <br>
+      Pet: <%= request.animal.name %> <br>
+      Shelter: <%= request.animal.shelter.name %>
+      </li>
+
+      <%= link_to "Send a message", request_path(request), :class => "btn btn-flat"%>
+    <% end %></ul>
+</div>
+<%= link_to "Go back to homepage", root_path, :class => "btn btn-flat"%>

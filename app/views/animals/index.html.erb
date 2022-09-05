@@ -10,13 +10,16 @@
         <div class="card-content">
           <div class="card-text">
             <h3 class="choose-button"><%= link_to "#{animal.name}".capitalize, animal_path(animal), class: "no-decoration" %></h3>
+
           </div>
         </div>
          <p> <i class="<%='fas fa-heart' if params[:category].present?%>"></i>  <%=animal.score(params)  if params[:category].present? %></p>
         <p><i class="fa-solid fa-hourglass-start"></i>    <%=animal.age%></p>
         <p><i class="fa-solid fa-compress"></i> <%=animal.size%></p>
         <p><i class="fa-solid fa-mars-and-venus"></i></i>  <%= animal.gender.capitalize%></p>
-
       </div>
     <%end%>
+    <% if params[:category].present? %>
+      <p><%= link_to "See more animals", animals_path, :class => "btn btn-flat"%></p>
+    <% end %>
 </div>

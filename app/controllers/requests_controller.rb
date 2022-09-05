@@ -1,5 +1,5 @@
 class RequestsController < ApplicationController
-  before_action :set_animal, only: [:create, :edit, :destroy, :update]
+  before_action :set_animal, only: [:create, :edit, :destroy, :update, :new]
 
   def index
     @requests = Request.all
@@ -7,6 +7,7 @@ class RequestsController < ApplicationController
 
   def show
     @request = Request.find(params[:id])
+    @message = Message.new
   end
   def edit
     @request = Request.find(params[:id])
@@ -19,25 +20,35 @@ class RequestsController < ApplicationController
   end
 
   def create
+    puts "new request"
     @request = Request.new(request_params)
-    @request.dress = @request
+    @request.status = "pending"
+    @request.animal = @animal
     @request.user = current_user
-    @request.save
-    redirect_to requests_path
+    if @request.save
+      redirect_to requests_path
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def new
     # We need @request in our `simple_form_for`
-    @request = Request.find(params[:dress_id])
     @request = Request.new
+  end
+
+  def destroy
+    @request = Request.find(params[:id])
+    @request.destroy
+    redirect_to requests_path, status: :see_other
   end
 
   private
 
-  def set_dress
-    @request = Request.find(params[:dress_id])
+  def set_animal
+    @animal = Animal.find(params[:animal_id])
   end
   def request_params
-    params.require(:request).permit(:start_date, :end_date)
+    params.require(:request).permit(:date)
   end
 end

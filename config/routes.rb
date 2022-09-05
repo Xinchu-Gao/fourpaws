@@ -8,13 +8,16 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
   get "/find-animals", to: "pages#find_animals"
-  get "/dashboard", to: "pages#dashboard"
+  # get "/dashboard", to: "pages#dashboard"
+  #post "requests", to: "requests#create"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
   # root "articles#index"
   resources :animals, only: [:show, :index] do
-  resources :requests, only: [:show, :create, :new]
+    resources :requests, only: [:create, :new]
   end
-  resources :requests, only: :destroy
+  resources :requests, only: [:destroy , :index, :show] do
+    resources :messages, only: :create
+  end
 end
