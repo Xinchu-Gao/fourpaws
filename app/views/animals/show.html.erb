@@ -1,44 +1,46 @@
 <div class="pet-show">
   <div class="row justify-content-center">
-    <div class="col-6">
+    <div class="col-5">
 
       <div class="pet-card">
-          <div class="pet-banner"><svg viewBox="0 0 100 100">
-
-              </svg></div>
+        <div class="pet-banner">
+          <% if @animal.photo.attached? %>
+      <%= cl_image_tag @animal.photo.key, class: "avatar-large", alt: "avatar-large" %>
+       <% else %>
+       <%= image_tag "not_found.png", class: "avatar-large", alt: "avatar-large"%>
+       <% end %>
+       </div>
           <div class="pet-menu">
-              <div class="opener"><span></span><span></span><span></span></div>
+              <div class="opener"></div>
           </div>
-          <h2 class="name"></h2>
-          <div class="title">Ant Collector</div>
+          <h2 class="name"><%= @animal.name.capitalize%></h2>
+          <div class="title">"The goodest pet"</div>
           <div class="actions">
-              <div class="follow-info">
-                  <h2><a href="#"><span>12</span><small>Followers</small></a></h2>
-                  <h2><a href="#"><span>1000</span><small>Following</small></a></h2>
-              </div>
-              <div class="follow-btn"><button>Follow</button></div>
+              <div class="follow-btn"><button>Back</button></div>
+
+              <div class="follow-btn"><button>Adopt</button></div>
           </div>
-          <div class="desc">Morgan has collected ants since they were six years old and now has many dozen ants but none in their pants.</div>
+          <div class="desc overflow-auto"><%=@animal.animal_bio%></p></div>
       </div>
     </div>
-  `<div class="col-6">
-    <div class="pet-card">
-        <div class="pet-banner"><svg viewBox="0 0 100 100">
 
-            </svg></div>
+   <div class="col-5">
+    <div class="pet-card">
+        <div class="pet-banner">
+        <% if @animal.photo.attached? %>
+      <%= image_tag 'logo.png', class: "avatar-large", alt: "avatar-large" %>
+       <% else %>
+       <%= image_tag "not_found.png", class: "avatar-large", alt: "avatar-large"%>
+       <% end %>
+            </div>
         <div class="pet-menu">
             <div class="opener"><span></span><span></span><span></span></div>
         </div>
-        <h2 class="name">Morgan Sweeney</h2>
-        <div class="title">Ant Collector</div>
-        <div class="actions">
-            <div class="follow-info">
-                <h2><a href="#"><span>12</span><small>Followers</small></a></h2>
-                <h2><a href="#"><span>1000</span><small>Following</small></a></h2>
-            </div>
-            <div class="follow-btn"><button>Follow</button></div>
-        </div>
-        <div class="desc">Morgan has collected ants since they were six years old and now has many dozen ants but none in their pants.</div>
+        <h2 class="name">Tierheim München</h2>
+        <div class="title">Riemer Str. 270 · 81829 München</div>
+
+
+        <div class="desc-shelter"> <p>"Lorem ipsum dolor sit amet, consectetur adipisici elit, …“ ist ein Blindtext, der nichts bedeuten soll, sondern als Platzhalter im Layout verwendet wird, um einen Eindruck vom fertigen Dokument zu erhalten."</p></div>
     </div>
   </div>`
 </div>
