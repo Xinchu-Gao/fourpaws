@@ -10,7 +10,6 @@
         <div class="card-content">
           <div class="card-text">
             <h3 class="choose-button"><%= link_to "#{animal.name}".capitalize, animal_path(animal), class: "no-decoration" %></h3>
-
           </div>
         </div>
          <p> <i class="<%='fas fa-heart' if params[:category].present?%>"></i>  <%=animal.score(params)  if params[:category].present? %></p>
