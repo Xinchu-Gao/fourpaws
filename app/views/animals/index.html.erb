@@ -18,7 +18,22 @@
         <p><i class="fa-solid fa-mars-and-venus"></i></i>  <%= animal.gender.capitalize%></p>
       </div>
     <%end%>
-    <% if params[:category].present? %>
-      <p><%= link_to "See more animals", animals_path, :class => "btn btn-flat"%></p>
-    <% end %>
+
+     <% if params[:category].present? %>
+     <div class="cardos">
+
+       <%= image_tag "Paw_card.jpg", height: 310, width: 200, crop: :fill%>
+
+        <div class="card-content">
+          <div class="card-text">
+            <h3 class="choose-button">🤍<%= link_to "See more pets", animals_path, class: "no-decoration"%></h3>
+          </div>
+        </div>
+         <p>Not what <br> you <br> were looking for?<br>click here <br> for more.</p>
+
+
+
+      </div>
+      <% end %>
+
 </div>
