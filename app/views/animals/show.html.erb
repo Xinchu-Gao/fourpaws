@@ -18,7 +18,7 @@
           <div class="actions">
               <div class="follow-btn"><button>Back</button></div>
 
-              <div class="follow-btn"><button>Adopt</button></div>
+              <div class="follow-btn"><button><%= link_to "Adopt", new_animal_request_path(@animal), class: "basic-link" %></button></div>
           </div>
           <div class="desc overflow-auto"><%=@animal.animal_bio%></p></div>
       </div>

@@ -50,6 +50,7 @@ form.find-animals-form {
   padding-right: 16px;
   padding-left: 16px;
 }
+
 .PillList-label {
   background-color: #ffffff;
   border: 1px solid #F2A6B0;
@@ -294,8 +295,8 @@ form.find-animals-form {
   display: none;
 }
 .PillListo-item input[type="checkbox"]:checked + .PillListo-label {
-  background-color: #E26C2D;
-  border: 1px solid #E26C2D;
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
   color: #fff;
   padding-right: 16px;
   padding-left: 16px;

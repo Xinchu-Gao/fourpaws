@@ -4,28 +4,35 @@
   height: 85px;
   margin: 0 auto;
   padding: 10px;
-  color: #f45d71;
+  color: #F2A6B0;
   text-align:center;
 }
 
+.background-2{
+  background-image: url("paw_bg_design.jpg");
+  background-size: cover;
+}
+
 main {
-  background: white;
+  background: rgb(255, 255, 255);
   margin: 20px 0;
   padding: 0px;
 }
 
 main div {
-  background:#71BDEF;
+  background:#ffffff;
   margin: 0 auto;
   color: rgb(6, 6, 6);
-  padding: 15px;
+  padding: 8px;
   margin: 0px auto;
   h3{
     text-align:center;
   }
-
 }
 
+.new_h3{
+  font-size: larger;
+}
 
 .answer{
   text-align:center;
@@ -34,4 +41,8 @@ main div {
   text-align:center;
   padding: 10px;
   margin: 0 auto;
+}
+
+.form-style{
+
 }

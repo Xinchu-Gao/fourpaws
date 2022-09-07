@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <div class = "center"><i class="fa-solid fa-heart"></i><h1>Application</h1></div>
+    <div class="background-2">
+    <div class = "center"><i class="fa-solid fa-paw" style="font-size: 2em; color: #F2A6B0;"></i><h1>Application</h1></div>
     <div class = "d-flex justify-content-center">
       <main>
       <div>
-        <h3>🤟When do you want to start?</h3>
+        <h3 class="new_h3">When do you want to start?</h3>
         <%= simple_form_for [@animal, @request] do |f| %>
-        <%= f.input :date %>
+        <%= f.input :date, label: false %>
+        <% end %>
       </div>
 
       <div>
-        <form action=<%= requests_path %>>
-        <h3>🤩Your name:</h3><div class ="answer"><input type="text" name="name" placeholder = "Firstname Lastname"></div>
-        <h3>📧Your email:</h3>
-        <div class ="answer"><input type="text" name="email" placeholder= "gao@web.com"></div>
-      </div>
-
+        <form action=<%= requests_path %> class="form-style">
+        <h3 class="new_h3">Your name:</h3><div class ="answer"><input type="text" name="name" placeholder = "your name"></div>
+        <br>
+        <h3 class="new_h3">Your email:</h3>
+        <div class ="answer"><input type="text" name="email" placeholder= "your email"></div>
+        <br>
       <div>
-         <h3>🏠Where are you living</h3>
+         <h3 class="new_h3">Where do you live?</h3>
      <%#  <label for="city">
       </label><br> %>
         <div class ="answer">
@@ -32,9 +34,10 @@
         </select>
         </div>
       </div>
+      <br>
  <!-- Question 2 -->
     <div>
-      <h3>How long do you plan to support this pet?</h3>
+      <h3 class="new_h3">How long do you plan to support this pet?</h3>
       <!-- Here are the choices for the second question. Notice how each input tag has the same name (q2), but a different name than the previous question. -->
       <label><input type="radio" name="q1" value="c1">
         1 month
@@ -49,11 +52,11 @@
         1 year
       </label><br />
     </div>
-
+    <br>
   <!-- Question 3 -->
     <div>
-      <h3>How much do you plan to support this pet?</h3>
-      <p><strong>🐶Don't forget large dogs can eat a lot</strong> </p>
+      <h3 class="new_h3">How much do you plan to support this pet?</h3>
+      <p>Don't forget large dogs can eat a lot</p>
       <!-- Here are the choices for the second question. Notice how each input tag has the same name (q2), but a different name than the previous question. -->
       <label><input type="radio" name="q2" value="c1">
         20 euros per month
@@ -68,10 +71,10 @@
         55 euros per month
       </label><br />
     </div>
-
+    <br>
     <div>
       <!-- Question 4-->
-      <h3>Which adopation way do you prefer?</h3>
+      <h3 class="new_h3">Which adopation way do you prefer?</h3>
       <!-- Choices for the third question -->
       <label><input type="radio" name="q3" value="c1">
         100% remote(only see the pet in videos)
@@ -86,13 +89,13 @@
         0% remote(I want to bring it home)
       </label><br />
     </div>
-
+    <br> 
       <div>
       <!-- Question 5-->
-      <h3>Is there anything else we should know?</h3>
+      <h3 class="new_h3">Is there anything else we should know?</h3>
           <label for="Description"></label>
-          <div class ="description"><textarea rows="5" cols="50" name="Description"
-                              id="Description" placeholder = "Tell us about you"></textarea></div>
+          <div class ="description"><textarea rows="4" cols="50" name="Description"
+                              id="Description" placeholder = "Tell us more about you"></textarea></div>
       </div>
       </main>
     </div>
@@ -103,10 +106,8 @@
         <br><p><%= link_to "Go back to my matches",animals_path, class: "btn btn-flat" %></p>
       </div>
 
-
-    <% end %>
-
+</div>
     </form>
-
+  </div>
   </body>
 </html>
