@@ -1,53 +1,288 @@
-
-<div class= "container">
+<div class="background-1">
   <div class="d-flex justify-content-center">
-    <%= form_with url: animals_path, method: :get, class: "find-animals-form" do %>
-      <div>
-        <%= label_tag 'Which pet do you prefer' %>
-        <%= select_tag :category, options_for_select(["cat", "dog"]) %>
+    <%= form_with url: animals_path, method: :get, class: "find-animals-form" do |f|%>
+    <h1 class="header-1"><strong>Let's find your perfect match!</strong></h1>
+    <br>
+    <div class="row">
+      <div class="col-md-12">
+        <div>
+        <%= label_tag 'Which type of animal do you favor?' %> <br>
+        <br>
+        <div class="PillListo-item">
+           <label>
+              <input type="checkbox" name="category" id="category" value="dog">
+                <span class="PillListo-label"><i class="fa-solid fa-dog fa-xl fa-beat" style="--fa-animation-duration: 2s;"></i>
+                <span class="Icon Icon--checkLight Icon--smallest"><i class="fa fa-check"></i></span>
+                </span>
+           </label>
+        </div>
       </div>
       <div>
-        <%= label_tag 'Would it be a boy or girl?' %>
-        <%= select_tag :gender, options_for_select(["boy", "girl"]) %>
+        <div class="PillListo-item">
+           <label>
+              <input type="checkbox" name="category" id="category" value="cat">
+                <span class="PillListo-label"><i class="fa-solid fa-cat fa-xl fa-beat" style="--fa-animation-duration: 2s;"></i>
+                <span class="Icon Icon--checkLight Icon--smallest"><i class="fa fa-check"></i></span>
+                </span>
+           </label>
+        </div>
+      </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+      <div class="col-md-12">
+        <div>
+        <%= label_tag 'Which gender would you prefer?' %> <br>
+        <br>
+        <div class="PillList-item">
+           <label>
+              <input type="checkbox" name="gender" id="gender" value="girl">
+                <span class="PillList-label"><i class="fa-solid fa-person-dress fa-2xl"></i>
+                <span class="Icon Icon--checkLight Icon--smallest"><i class="fa fa-check"></i></span>
+                </span>
+           </label>
+        </div>
       </div>
       <div>
-        <%= label_tag 'How big is your home?' %>
-        <%= select_tag :size, options_for_select(["S", "M", "L","XL"]) %>
+        <div class="PillListb-item">
+           <label>
+              <input type="checkbox" name="gender" id="gender" value="boy">
+                <span class="PillListb-label"><i class="fa-solid fa-person fa-2xl"></i>
+                <span class="Icon Icon--checkLight Icon--smallest"><i class="fa fa-check"></i></span>
+                </span>
+           </label>
+        </div>
       </div>
-
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+      <div class="col-md-12">
+        <div>
+          <%= label_tag 'How would you describe your home size?' %> <br>
+          <br>
+          <div class="PillListy-item">
+            <label>
+                <input type="checkbox" name="size" id="size" value="S">
+                  <span class="PillListy-label">S
+                  <span class="Icon Icon--checkLight Icon--smallest"><i class="fa fa-check"></i></span>
+                  </span>
+            </label>
+          </div>
+        </div>
+        <div>
+          <div class="PillListy-item">
+            <label>
+                <input type="checkbox" name="size" id="size" value="M">
+                  <span class="PillListy-label">M
+                  <span class="Icon Icon--checkLight Icon--smallest"><i class="fa fa-check"></i></span>
+                  </span>
+            </label>
+          </div>
+        </div>
+        <div>
+          <div class="PillListy-item">
+            <label>
+                <input type="checkbox" name="size" id="size" value="L">
+                  <span class="PillListy-label">L
+                  <span class="Icon Icon--checkLight Icon--smallest"><i class="fa fa-check"></i></span>
+                  </span>
+            </label>
+          </div>
+        </div>
+        <div>
+          <div class="PillListy-item">
+            <label>
+                <input type="checkbox" name="size" id="size" value="XL">
+                  <span class="PillListy-label">XL
+                  <span class="Icon Icon--checkLight Icon--smallest"><i class="fa fa-check"></i></span>
+                  </span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+      <div class="col-md-12">
+        <div>
+        <%= label_tag 'What age should your ideal animal companion be?' %> <br>
+        <br>
+        <div class="PillList-item">
+           <label>
+              <input type="checkbox" name="age" id="age" value="Teenager">
+                <span class="PillList-label">Teenager
+                <span class="Icon Icon--checkLight Icon--smallest"><i class="fa fa-check"></i></span>
+                </span>
+           </label>
+        </div>
+      </div>
       <div>
-        <%= label_tag 'How active are you?' %>
-        <%= select_tag :age, options_for_select(["Teenager", "Adult", "Elder"]) %>
+        <div class="PillList-item">
+           <label>
+              <input type="checkbox" name="age" id="age" value="Adult">
+                <span class="PillList-label">Adult
+                <span class="Icon Icon--checkLight Icon--smallest"><i class="fa fa-check"></i></span>
+                </span>
+           </label>
+        </div>
       </div>
-
       <div>
-        <%= label_tag 'Do you want to do it in remote?' %>
-        <%= select_tag :remote, options_for_select(["Yes", "No"]) %>
+        <div class="PillList-item">
+           <label>
+              <input type="checkbox" name="age" id="age" value="Elder">
+                <span class="PillList-label">Elder
+                <span class="Icon Icon--checkLight Icon--smallest"><i class="fa fa-check"></i></span>
+                </span>
+           </label>
+        </div>
       </div>
-
-      <div>
-        <%= label_tag 'Fun Question' %> <br>
-        <%= text_field_tag :name,
-          params[:name],
-          class: "form-control",
-          placeholder: "Put your answer here"
-        %>
       </div>
+    </div>
+    <br>
+    <br>
+    <%= label_tag 'Would you be happy to remotely care for a pet?' %>
+    <br>
+    <fieldset class="form-group boolean optional snippet_archived">
+      <div class="form-check">
+        <input name="snippet[archived]" type="hidden" value="0">
+        <input class="form-check-input boolean optional toggle" type="checkbox" value="1" name="snippet[archived]" id="snippet_archived">
+        <label class="form-check-label boolean optional" for="snippet_archived">Remote
+        </label>
+      </div>
+    </fieldset>
+    <br>
+    <br>
       <div>
         <%= label_tag 'Which three traits best define you?' %>
-        <%= select_tag :animal_bio, options_for_select(["Reliable, down-to-earth and honest", "Spontaneous, upbeat and fun-loving", "straightforward, sporty and close to nature"]) %>
       </div>
-       <div>
-        <%= label_tag 'Which movie do you like to watch?' %>
-        <%= select_tag :animal_bio, options_for_select(["Madagascar", "American Pie", "Brokeback Mountain", "Into the wild", "The Fabulous Destiny of Amélie Poulain", "Kill Bill"]) %>
+      <br>
+    <div class="row">
+      <div class="col-md-12">
+        <label class="PillListb-item">
+        <input type="checkbox" name="feature" value="1">
+        <span class="PillListb-label">Reliable, down-to-ewarth and honest
+        <span class="Icon Icon--checkLight Icon--smallest"><i class="fa fa-check"></i></span>
+        </span>
+        </label>
+        <label class="PillList-item">
+        <input type="checkbox" name="feature" value="2">
+        <span class="PillList-label">Sponatneous, upbeat and fun-loving
+        <span class="Icon Icon--checkLight Icon--smallest"><i class="fa fa-check"></i></span>
+        </span>
+        </label>
+        <label class="PillListy-item">
+        <input type="checkbox" name="feature" value="3">
+        <span class="PillListy-label">Straightforward, sporty and close to nature
+        <span class="Icon Icon--checkLight Icon--smallest"><i class="fa fa-check"></i></span>
+        </span>
+        </label>
       </div>
+    </div><br>
+    <%= label_tag 'Which kind of movie do you like to watch?' %>
+    <br>
+    <div class="row">
+      <div class="col-md-12">
+        <label class="PillListb-item">
+        <input type="checkbox" name="feature" value="1">
+        <span class="PillListb-label">Madagascar
+        <span class="Icon Icon--checkLight Icon--smallest"><i class="fa fa-check"></i></span>
+        </span>
+        </label>
+        <label class="PillListb-item">
+        <input type="checkbox" name="feature" value="2">
+        <span class="PillListb-label">American Pie
+        <span class="Icon Icon--checkLight Icon--smallest"><i class="fa fa-check"></i></span>
+        </span>
+        </label>
+        <label class="PillListb-item">
+        <input type="checkbox" name="feature" value="3">
+        <span class="PillListb-label">Into The Wild
+        <span class="Icon Icon--checkLight Icon--smallest"><i class="fa fa-check"></i></span>
+        </span>
+        </label>
+        <label class="PillListb-item">
+        <input type="checkbox" name="feature" value="3">
+        <span class="PillListb-label">Kill Bill
+        <span class="Icon Icon--checkLight Icon--smallest"><i class="fa fa-check"></i></span>
+        </span>
+        </label>
+        <label class="PillListb-item">
+        <input type="checkbox" name="feature" value="3">
+        <span class="PillListb-label">The Fabulous Destiny of Amélie Poulain
+        <span class="Icon Icon--checkLight Icon--smallest"><i class="fa fa-check"></i></span>
+        </span>
+        </label>
+      </div>
+    </div>
+
+      <br>
       <div>
         <%= label_tag 'Your favourite animal is...' %>
-        <%= select_tag :animal_bio, options_for_select(["funny", "large and powerful", "lively", "tiny and convenient", "smart", "curious", "cuddly", "relaxed"]) %>
       </div>
-      <div>
-        <%= submit_tag "Submit" %>
+      <br>
+    <div class="row">
+      <div class="col-md-12">
+        <label class="PillListy-item">
+        <input type="checkbox" name="feature" value="1">
+        <span class="PillListy-label">funny
+        <span class="Icon Icon--checkLight Icon--smallest"><i class="fa fa-check"></i></span>
+        </span>
+        </label>
+        <label class="PillListy-item">
+        <input type="checkbox" name="feature" value="2">
+        <span class="PillListy-label">large and powerful
+        <span class="Icon Icon--checkLight Icon--smallest"><i class="fa fa-check"></i></span>
+        </span>
+        </label>
+        <label class="PillListy-item">
+        <input type="checkbox" name="feature" value="3">
+        <span class="PillListy-label">lively
+        <span class="Icon Icon--checkLight Icon--smallest"><i class="fa fa-check"></i></span>
+        </span>
+        </label>
+        <label class="PillListy-item">
+        <input type="checkbox" name="feature" value="3">
+        <span class="PillListy-label">tiny and convenient
+        <span class="Icon Icon--checkLight Icon--smallest"><i class="fa fa-check"></i></span>
+        </span>
+        </label>
+        <label class="PillListy-item">
+        <input type="checkbox" name="feature" value="3">
+        <span class="PillListy-label">smart
+        <span class="Icon Icon--checkLight Icon--smallest"><i class="fa fa-check"></i></span>
+        </span>
+        </label>
+        <label class="PillListy-item">
+        <input type="checkbox" name="feature" value="3">
+        <span class="PillListy-label">curious
+        <span class="Icon Icon--checkLight Icon--smallest"><i class="fa fa-check"></i></span>
+        </span>
+        </label>
+        <label class="PillListy-item">
+        <input type="checkbox" name="feature" value="3">
+        <span class="PillListy-label">cuddly
+        <span class="Icon Icon--checkLight Icon--smallest"><i class="fa fa-check"></i></span>
+        </span>
+        </label>
+        <label class="PillListy-item">
+        <input type="checkbox" name="feature" value="3">
+        <span class="PillListy-label">relaxed
+        <span class="Icon Icon--checkLight Icon--smallest"><i class="fa fa-check"></i></span>
+        </span>
+        </label>
       </div>
+    </div><br>
+    <div>
+      <%= submit_tag "Submit", class:"button" %>
+    </div>
+    <br>
+    <br>
     <% end %>
   </div>
+</div>
 </div>

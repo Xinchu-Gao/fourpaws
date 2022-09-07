@@ -18,3 +18,310 @@ form.find-animals-form {
   width: 400px;
   flex-direction: column;
 }
+
+.background-1 {
+  background-image: url("paw_bg_design.jpg");
+  background-size: cover;
+}
+
+.header-1 {
+  align-items: center;
+  text-align: center;
+  color: #F2A6B0;
+}
+.PillList-item {
+  cursor: pointer;
+  display: inline-block;
+  float: left;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 20px;
+  margin: 0 12px 12px 0;
+  text-transform: capitalize;
+}
+
+.PillList-item input[type="checkbox"] {
+  display: none;
+}
+.PillList-item input[type="checkbox"]:checked + .PillList-label {
+  background-color: #F2A6B0;
+  border: 1px solid #F2A6B0;
+  color: #fff;
+  padding-right: 16px;
+  padding-left: 16px;
+}
+.PillList-label {
+  background-color: #ffffff;
+  border: 1px solid #F2A6B0;
+  border-radius: 20px;
+  color: #F2A6B0;
+  display: block;
+  padding: 7px 28px;
+  text-decoration: none;
+}
+.PillList-item
+  input[type="checkbox"]:checked
+  + .PillList-label
+  .Icon--checkLight {
+  display: inline-block;
+}
+.PillList-item input[type="checkbox"]:checked + .PillList-label .Icon--addLight,
+.PillList-label .Icon--checkLight,
+.PillList-children {
+  display: none;
+}
+.PillList-label .Icon {
+  width: 12px;
+  height: 12px;
+  margin: 0 0 0 12px;
+}
+.Icon--smallest {
+  font-size: 12px;
+  line-height: 12px;
+}
+.Icon {
+  background: transparent;
+  display: inline-block;
+  font-style: normal;
+  vertical-align: baseline;
+  position: relative;
+}
+
+
+.PillListb-item {
+  cursor: pointer;
+  display: inline-block;
+  float: left;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 20px;
+  margin: 0 12px 12px 0;
+  text-transform: capitalize;
+}
+
+.PillListb-item input[type="checkbox"] {
+  display: none;
+}
+.PillListb-item input[type="checkbox"]:checked + .PillListb-label {
+  background-color: #71BDEF;
+  border: 1px solid #71BDEF;
+  color: #fff;
+  padding-right: 16px;
+  padding-left: 16px;
+}
+.PillListb-label {
+  background-color: #ffffff;
+  border: 1px solid #71BDEF;
+  border-radius: 20px;
+  color: #71BDEF;
+  display: block;
+  padding: 7px 28px;
+  text-decoration: none;
+}
+.PillListb-item
+  input[type="checkbox"]:checked
+  + .PillListb-label
+  .Icon--checkLight {
+  display: inline-block;
+}
+.PillListb-item input[type="checkbox"]:checked + .PillListb-label .Icon--addLight,
+.PillListb-label .Icon--checkLight,
+.PillListb-children {
+  display: none;
+}
+.PillListb-label .Icon {
+  width: 12px;
+  height: 12px;
+  margin: 0 0 0 12px;
+}
+
+
+.PillListy-item {
+  cursor: pointer;
+  display: inline-block;
+  float: left;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 20px;
+  margin: 0 12px 12px 0;
+  text-transform: capitalize;
+}
+
+.PillListy-item input[type="checkbox"] {
+  display: none;
+}
+.PillListy-item input[type="checkbox"]:checked + .PillListy-label {
+  background-color: #FBC418;
+  border: 1px solid #FBC418;
+  color: #fff;
+  padding-right: 16px;
+  padding-left: 16px;
+}
+.PillListy-label {
+  background-color: #ffffff;
+  border: 1px solid #FBC418;
+  border-radius: 20px;
+  color: #FBC418;
+  display: block;
+  padding: 7px 28px;
+  text-decoration: none;
+}
+.PillListy-item
+  input[type="checkbox"]:checked
+  + .PillListy-label
+  .Icon--checkLight {
+  display: inline-block;
+}
+.PillListy-item input[type="checkbox"]:checked + .PillListy-label .Icon--addLight,
+.PillListy-label .Icon--checkLight,
+.PillListy-children {
+  display: none;
+}
+.PillListy-label .Icon {
+  width: 12px;
+  height: 12px;
+  margin: 0 0 0 12px;
+}
+
+.btn-ghost {
+  color: #ff9797;
+  border: 1px solid #ff6363;
+  padding: 8px 16px;
+  font-size: small;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.btn-ghost:hover {
+  opacity: 1;
+}
+
+.btn-flat {
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  background: #F2A6B0;
+  transition: background 0.3s ease;
+  font-size: small
+}
+
+.btn-flat:hover {
+  background: #F9DCE0;
+  color: white;
+}
+
+.btn-gradient {
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: linear-gradient(#167FFB, #0F60C4);
+  transition: background 0.3s ease;
+  border: 1px solid #0F60C4;
+}
+
+
+.banner-flex {
+  display: flex;
+  align-items: flex-end;
+  gap: 170px;
+}
+
+.banner-container {
+  margin: 0 100px;
+}
+
+.toggle {
+  position: absolute;
+  transform: scale(0);
+}
+
+.toggle + label {
+  position: relative;
+  display: inline-block;
+  padding-left: 40px;
+}
+
+.toggle + label::before {
+  content: '';
+  display: block;
+  position: absolute;
+  cursor: pointer;
+  width: 36px;
+  height: 20px;
+  top: 0;
+  left: 0;
+  background-color: #EAEAEA;
+  border-radius: 50rem;
+}
+
+.toggle:checked + label::before {
+  background-color: #1EDD88;
+}
+
+.toggle + label::after {
+  content: '';
+  display: block;
+  position: absolute;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  top: 2px;
+  left: 2px;
+  background-color: white;
+  border-radius: 50%;
+  transition: left 0.2s ease;
+}
+
+.toggle:checked + label::after {
+  left: 18px;
+}
+
+
+.PillListo-item {
+  cursor: pointer;
+  display: inline-block;
+  float: left;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 20px;
+  margin: 0 12px 12px 0;
+  text-transform: capitalize;
+}
+
+.PillListo-item input[type="checkbox"] {
+  display: none;
+}
+.PillListo-item input[type="checkbox"]:checked + .PillListo-label {
+  background-color: #E26C2D;
+  border: 1px solid #E26C2D;
+  color: #fff;
+  padding-right: 16px;
+  padding-left: 16px;
+}
+.PillListo-label {
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 20px;
+  color: #E26C2D;
+  display: block;
+  padding: 7px 28px;
+  text-decoration: none;
+}
+.PillListo-item
+  input[type="checkbox"]:checked
+  + .PillListo-label
+  .Icon--checkLight {
+  display: inline-block;
+}
+.PillListo-item input[type="checkbox"]:checked + .PillListo-label .Icon--addLight,
+.PillListo-label .Icon--checkLight,
+.PillListo-children {
+  display: none;
+}
+.PillListo-label .Icon {
+  width: 12px;
+  height: 12px;
+  margin: 0 0 0 12px;
+}
