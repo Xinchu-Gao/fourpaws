@@ -9,7 +9,7 @@
         <h3 class="new_h3">When do you want to start?</h3>
         <%= simple_form_for [@animal, @request] do |f| %>
         <%= f.input :date, label: false %>
-        <% end %>
+
       </div>
 
       <div>
@@ -89,7 +89,7 @@
         0% remote(I want to bring it home)
       </label><br />
     </div>
-    <br> 
+    <br>
       <div>
       <!-- Question 5-->
       <h3 class="new_h3">Is there anything else we should know?</h3>
@@ -107,6 +107,7 @@
       </div>
 
 </div>
+<% end %>
     </form>
   </div>
   </body>
