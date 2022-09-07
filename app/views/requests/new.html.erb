@@ -8,17 +8,14 @@
       <div>
         <h3 class="new_h3">When do you want to start?</h3>
         <%= simple_form_for [@animal, @request] do |f| %>
-        <%= f.input :date, label: false %>
-      </div>
+          <%= f.input :date, label: false %>
 
-      <div>
-        <form action=<%= requests_path %> class="form-style">
+
         <h3 class="new_h3">Your name:</h3><div class ="answer"><input type="text" name="name" placeholder = "your name"></div>
         <br>
         <h3 class="new_h3">Your email:</h3>
         <div class ="answer"><input type="text" name="email" placeholder= "your email"></div>
         <br>
-      <div>
          <h3 class="new_h3">Where do you live?</h3>
      <%#  <label for="city">
       </label><br> %>
@@ -105,10 +102,6 @@
         <br><p><%= link_to "Go back to my matches",animals_path, class: "btn btn-flat" %></p>
       </div>
     <% end %>
-
-
-    </form>
-
     </div>
   </body>
 </html>
