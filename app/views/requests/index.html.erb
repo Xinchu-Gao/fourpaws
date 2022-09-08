@@ -7,14 +7,14 @@
       <br>
       <br>
         <div class = "d-flex justify-content-center">
-              <ul><% @requests.each do |request| %>
-                <li>Date: <%= request.date %> <br>
+              <ul style="list-style-type:none"><% @requests.each do |request| %>
+                <li>Date: <%= request.date.strftime(" %d %b. %Y") %> <br>
                 Status: <%= request.status %> <br>
                 Pet: <%= request.animal.name %> <br>
                 Shelter: <%= request.animal.shelter.name %>
                 </li>
 
-                <%= link_to "Send a message", request_path(request), :class => "btn btn-flat"%>
+                <%= link_to "Send a message", request_path(request), :class => "btn btn-flat"%> <br><br>
               <% end %></ul>
         </div>
         <br>
