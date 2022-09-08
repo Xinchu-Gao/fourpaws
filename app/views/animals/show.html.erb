@@ -18,7 +18,7 @@
           <div class="actions">
               <div class="follow-btn"><button>Back</button></div>
 
-              <div class="follow-btn"><button><%= link_to "Adopt", new_animal_request_path(@animal), class: "btn btn-flat" %></button></div>
+              <div class="follow-btn"><button><%= link_to "Adopt", new_animal_request_path(@animal), class: "follow-btn" %></button></div>
           </div>
           <div class="desc overflow-auto"><%=@animal.animal_bio%></p></div>
       </div>
@@ -39,7 +39,7 @@
         <h2 class="name">Tierheim München</h2>
         <div class="title">Riemer Str. 270 · 81829 München</div>
 
-        <div class="desc-shelter"> <p>"Lorem ipsum dolor sit amet, consectetur adipisici elit, …“ ist ein Blindtext, der nichts bedeuten soll, sondern als Platzhalter im Layout verwendet wird, um einen Eindruck vom fertigen Dokument zu erhalten."</p></div>
+        <div class="desc-shelter desc overflow-auto"> <p>The Tierheim München e.V. has been advocating for animals in Munich and the surrounding area for over 180 years, always bearing in mind the maxim "For animals, For people, For Munich." Because nearly every animal's fate is also related to a human one, we do not view animal preservation as a responsibility that is independent of people. Therefore, helping animals is constantly helping people.</p></div>
     </div>
   </div>`
 </div>
