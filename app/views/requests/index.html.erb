@@ -1,13 +1,25 @@
-<div class="cards">
-  <h2>Requests</h2>
-    <ul><% @requests.each do |request| %>
-      <li>Date: <%= request.date %> <br>
-      Status: <%= request.status %> <br>
-      Pet: <%= request.animal.name %> <br>
-      Shelter: <%= request.animal.shelter.name %>
-      </li>
+<!DOCTYPE html>
+<html>
+  <body>
+      <div class="background-2">
+      <div class = "center"><i class="fa-solid fa-paw" style="font-size: 2em; color: #F2A6B0;"></i><h1>Your Requests</h1></div>
+      <br>
+      <br>
+      <br>
+        <div class = "d-flex justify-content-center">
+              <ul><% @requests.each do |request| %>
+                <li>Date: <%= request.date %> <br>
+                Status: <%= request.status %> <br>
+                Pet: <%= request.animal.name %> <br>
+                Shelter: <%= request.animal.shelter.name %>
+                </li>
 
-      <%= link_to "Send a message", request_path(request), :class => "btn btn-flat"%>
-    <% end %></ul>
-</div>
-<%= link_to "Go back to homepage", root_path, :class => "btn btn-flat"%>
+                <%= link_to "Send a message", request_path(request), :class => "btn btn-flat"%>
+              <% end %></ul>
+        </div>
+        <br>
+        <br>
+      </div>
+    <%= link_to "Go back to homepage", root_path, :class => "btn btn-flat"%>
+  </body>
+</html>
