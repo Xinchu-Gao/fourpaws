@@ -2,7 +2,7 @@
   font-size: 16px;
   color: #404040;
   font-family: Poppins, sans-serif;
-  background-image: linear-gradient(to bottom right, #ff9eaa 0% 65%, #e860ff 95% 100%);
+  background-image: linear-gradient(to bottom right, #F9DCE0 0% 65%, #F2A6B0 95% 100%);
   background-position: center;
   background-attachment: fixed;
   margin: 0;
@@ -188,4 +188,45 @@
   text-align: justify;
   padding: 2.5rem 2rem 2.5rem;
   order: 100;
+}
+
+// chat stuff
+.chat-background {
+font-size: 16px;
+  color: #404040;
+  font-family: Poppins, sans-serif;
+  background-image: linear-gradient(to bottom right, #F2A6B0 0% 65%, #F9DCE0 95% 100%);
+  background-position: center;
+  background-attachment: fixed;
+  width: 100%;
+  padding: 30px;
+}
+
+.chat-container {
+  display: flex;
+  column-gap: 60px;
+  width: 80%;
+  margin: 10px auto;
+  justify-content: space-evenly;
+}
+
+.chat-card {
+  width: 20rem;
+}
+
+.avatar {
+  object-fit: cover;
+  width: 60px;
+  border-radius: 50%;
+  height: 60px;
+}
+
+.pet-list {
+  > * {
+    margin-bottom: 10px;
+  }
+
+  li {
+    list-style-type: none;
+  }
 }

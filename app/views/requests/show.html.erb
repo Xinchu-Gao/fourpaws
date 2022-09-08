@@ -1,4 +1,43 @@
-<div class="container chatroom"
+
+<div class="chat-background">
+<div class="chat-container">
+
+<div class="chat-card">
+    <div class="pet-card">
+        <div class="pet-banner">
+
+      <%= image_tag 'user.png', class: "avatar-large", alt: "avatar-large" %>
+            </div>
+        <div class="pet-menu">
+            <div class="opener"><span></span><span></span><span></span></div>
+        </div>
+        <h2 class="name">Eduardo</h2>
+        <div class="title">These are my protégés</div>
+        <div class="desc-shelter">
+        <ol class="pet-list">
+          <li>
+            <div class="notification">
+               <%= image_tag 'animal11.jpg', class: "avatar", alt: "avatar" %><small>  Spiros, 14th Jan</small>
+            </div>
+          </li>
+
+          <li>
+            <div class="notification">
+               <%= image_tag 'animal2.jpg', class: "avatar", alt: "avatar" %><small>  Danica, 12th Aug</small>
+            </div>
+          </li>
+
+          <li>
+            <div class="notification">
+              <%= image_tag 'animal1.jpg', class: "avatar", alt: "avatar" %><small><strong> Leo, Pending</strong></small>
+            </div>
+          </li>
+        </ol>
+
+        </div>
+    </div>
+</div>
+<div class="col-4 chatroom div pet-card"
   data-controller="chatroom-subscription"
   data-chatroom-subscription-request-id-value="<%= @request.id %>"
 >
@@ -17,5 +56,24 @@
     %>
     <%= f.submit "Send", class: "btn btn-primary mb-3" %>
   <% end %>
+</div>
+<div>
+    <div class="pet-card">
+        <div class="pet-banner">
 
+      <%= image_tag 'tierheim_logo.png', class: "avatar-large", alt: "avatar-large" %>
+            </div>
+        <div class="pet-menu">
+            <div class="opener"><span></span><span></span><span></span></div>
+        </div>
+        <h2 class="name">Tierheim München</h2>
+        <div class="title">Riemer Str. 270 · 81829 München</div>
+
+
+        <div class="desc-shelter"> <p>"Lorem ipsum dolor sit amet, consectetur adipisici elit, …“ ist ein Blindtext, der nichts bedeuten soll, sondern als Platzhalter im Layout verwendet wird, um einen Eindruck vom fertigen Dokument zu erhalten."</p></div>
+    </div>
+</div>
+
+</div>
+</div>
 </div>
